@@ -1,28 +1,32 @@
 import json
+from extract_functions import extract_dmi_metObs
+import pandas as pd
 
-# Indlæs secrets.json
 with open('secrets.json') as f:
     secrets = json.load(f)
 
-import requests
 
 url = "https://dmigw.govcloud.dk/v2/metObs/collections/observation/items"
+parameterIds = ["sun_last1h_glob"]#,"temp_mean_past1h","temp_soil_mean_past1h",'sun_last1h_glob','pressure']
+bbox="12.3,55.6,12.7,56.0"
+#period="latest-day"
+period='latest-day'
+limit=100
+secret_key=secrets["metObs-api-key"]
 
-parameterIds = ["precip_past1h","temp_mean_past1h","temp_soil_mean_past1h"]
+for i in parameterIds:    
+    data = extract_dmi_metObs(i,bbox,period,limit,url,secret_key)
 
-params = {
-    "bbox": "12.3,55.6,12.7,55.8",
-    "period": "latest-day",
-    "parameterId": "precip_past1h",
-    "limit": 20  # Antal poster du vil hente
-}
+features = data.get('features')
+records = [item['properties'] for item in features]
+df = pd.DataFrame(records)
 
-headers = {
-    "X-Gravitee-Api-Key": secrets["metObs-api-key"]
-}
+stationIds = {
+    "06188": "Sjælsmark",
+    "06180": "Cph Airport",
+    "05735": "Botanical Garden",
+    "06186": "Landbohøjskolen",
+    "06181": "Jægersborg",
+    "06187": "Københavns Toldbod",
+    }
 
-
-response = requests.get(url, params=params, headers=headers)
-
-data = response.json()
-print(data)
