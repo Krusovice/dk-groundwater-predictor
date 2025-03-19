@@ -21,12 +21,3 @@ features = data.get('features')
 records = [item['properties'] for item in features]
 df = pd.DataFrame(records)
 
-stationIds = {
-    "06188": "Sjælsmark",
-    "06180": "Cph Airport",
-    "05735": "Botanical Garden",
-    "06186": "Landbohøjskolen",
-    "06181": "Jægersborg",
-    "06187": "Københavns Toldbod",
-    }
-

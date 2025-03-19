@@ -15,3 +15,5 @@ def extract_dmi_metObs(parameterId,bbox,period,limit,url,secret_key):
     response = requests.get(url, params=params, headers=headers)
     
     return response.json()
+
+
