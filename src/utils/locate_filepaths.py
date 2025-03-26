@@ -31,8 +31,7 @@ def azure_databricks_filepaths(client_id=None, tenant_id=None, client_secret=Non
   print('Returning databricks filepaths...')
   filepaths = {}
   for i in ['bronze','silver','gold']:
-    print(f'Adding filepath {i}...')
-
+    
     # Mounting, if the filepath is not found already
     if not is_mounted(f"/mnt/{i}"):
       print("filepaths not found, trying to mount...")
