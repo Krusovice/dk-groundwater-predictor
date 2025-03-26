@@ -3,7 +3,7 @@ import os
 def detect_environment_name():
   try:
     if "DATABRICKS_RUNTIME_VERSION" in os.environ:
-      environment_name='databricks'
+      environment_name='azure_databricks'
     else:
       environment_name = os.getenv('COMPUTERNAME')
     print(f'Environment detected: {environment_name}')
