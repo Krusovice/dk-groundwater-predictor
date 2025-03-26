@@ -1,6 +1,5 @@
-"# dmi-climate"
-This repository is contains the etl for loading in climate data and cleaning it to silver layer state.
+This repository contains an ETL pipeline for ingesting and processing climate data relevant to groundwater level predictions.
 
-The data is extracted through dmi's rest api and stored in an azure data lake.
+Data is extracted from DMI’s REST API, cleaned, and stored in Azure Data Lake in Delta format using a medallion architecture.
 
-The project is written in Azure Databricks.
+Tech stack: Databricks, Python, PySpark, Delta Lake, Azure Data Factory (for automated ingestion).
