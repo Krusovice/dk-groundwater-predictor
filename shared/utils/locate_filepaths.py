@@ -1,8 +1,8 @@
 import json
-from src.utils.mount_azure_storage import mount_azure_storage
+from shared.utils.mount_azure_storage import mount_azure_storage
 from config.paths import ENVIRONMENTS_FILE
 from databricks.sdk.runtime import dbutils
-from src.utils.detect_environments import detect_environment_name
+from shared.utils.detect_environments import detect_environment_name
 
 
 
