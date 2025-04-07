@@ -2,7 +2,7 @@
 
 This repository contains material for building a machine learning model that predicts groundwater levels based on climate data.
 
-It includes data extraction, cleaning, feature engineering, and model training, all implemented in Azure Databricks using a medallion architecture.
+It includes data extraction, cleaning, feature engineering and model training. Implemented in Databricks using a medallion architecture.
 
 It is currently being developed on Azure and therefore requires additional setup for running on a local environment.
 
