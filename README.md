@@ -10,7 +10,7 @@ It is currently being developed on Azure and therefore requires additional setup
 <ul>
   <li><strong>Climate data ETL:</strong> Automatically ingested daily via DMI's REST API.</li>
   <li><strong>Groundwater data ETL:</strong> Manually extracted from grundvandsstanden.dk (GEUS).</li>
-  <li><strong>Groundwater prediction model:</strong> In development — Applying Linear Regression and Random Forest to predict groundwater levels from climate features.</li>
+  <li><strong>Groundwater prediction model:</strong> In development — Applying Linear Regression to predict groundwater levels from climate features.</li>
 </ul>
 
 <h3>Tech Stack</h3>
@@ -19,7 +19,7 @@ It is currently being developed on Azure and therefore requires additional setup
   <li>PySpark</li>
   <li>Azure Databricks</li>
   <li>Delta Lake</li>
-  <li>Scikit-learn</li>
+  <li>PySpark MLlib</li>
 </ul>
 
 <h3>Future Ideas</h3>
