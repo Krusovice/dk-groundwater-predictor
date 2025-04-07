@@ -1,17 +1,30 @@
-This repository contains ETL pipelines of climate, groundwater and soil profile data in preparation for a groundwater prediction model, based on climate data and surrounding soil layers.
-The application is written in Azure Databricks and the formatting is using a medallion architecture.
+<h1>DK Groundwater Predictor</h1>
 
-Tech stack: Databricks, Python, PySpark, Delta Lake, Azure Data Factory (for automated ingestion).
+This repository contains material for building a machine learning model that predicts groundwater levels based on climate data.
 
-The model is trained on historic climate data and groundwater levels, and the soil profiles at each groundwater measurement location.
-Initially, the groundwater level model only takes in the climate data as a variable for predicting the groundwater level in each location.
+It includes data extraction, cleaning, feature engineering, and model training, all implemented in Azure Databricks using a medallion architecture.
 
-Later, the soil profile is also implemented, to allow for groundwater level predictions based on soil profiles in the surroundings. However, there may be other significant factors relevant to the groundwater level, when it comes to evaluation on location. Therefore the expectation of the model prediction based on location is not high.
+It is currently being developed on Azure and therefore requires additional setup for running on a local environment.
 
-DMI Climate Data
-Data is ingested weekly using DMI’s REST API.
+<h3>Contents</h3>
+<ul>
+  <li><strong>Climate data ETL:</strong> Automatically ingested daily via DMI's REST API.</li>
+  <li><strong>Groundwater data ETL:</strong> Manually extracted from grundvandsstanden.dk (GEUS).</li>
+  <li><strong>Groundwater prediction model:</strong> In development — Applying Linear Regression and Random Forest to predict groundwater levels from climate features.</li>
+</ul>
 
-Groundwater Data
-Data ingested manually. Data from grundvandsstanden.dk
+<h3>Tech Stack</h3>
+<ul>
+  <li>Python</li>
+  <li>PySpark</li>
+  <li>Azure Databricks</li>
+  <li>Delta Lake</li>
+  <li>Scikit-learn</li>
+</ul>
 
-Soil Profile ingested manually. Data from geus.dk
+<h3>Future Ideas</h3>
+<ul>
+  <li>Make the project easily runnable by adding dependency checks and automated setup for local environments.</li>
+  <li>Incorporate soil profile data to improve model accuracy.</li>
+  <li>Explore more advanced ML models.</li>
+</ul>
