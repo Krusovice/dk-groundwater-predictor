@@ -22,9 +22,14 @@ It is currently being developed on Azure and therefore requires additional setup
   <li>PySpark MLlib</li>
 </ul>
 
+<h3>Example on Prediction</h3>
+
+![Groundwater_Prediction](images/groundwaterPredictorResults.png)
+
 <h3>Future Ideas</h3>
 <ul>
   <li>Make the project easily runnable by adding dependency checks and automated setup for local environments.</li>
-  <li>Incorporate soil profile data to improve model accuracy.</li>
+  <li>Incorporate soil profile data to improve model accuracy and allow for prediction on arbitrary soil profiles.</li>
   <li>Explore more advanced ML models.</li>
 </ul>
+
