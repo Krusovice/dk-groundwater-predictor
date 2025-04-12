@@ -1,6 +1,8 @@
 from pyspark.sql import DataFrame
 from pyspark.sql.types import StructType, StructField, TimestampType, FloatType, StringType
-from pyspark.sql.functions import lit, col, round
+from pyspark.sql.functions import lit, col, round, current_timestamp, to_date
+from pyspark.sql import SparkSession
+
 
 def parse_station_file(station_file: str) -> dict[str, str]:
     """
@@ -46,6 +48,8 @@ def load_groundwater_data(groundwater_data_files: list[str], station_dict: dict[
     ])
 
     empty_data = []
+
+    spark = SparkSession.builder.getOrCreate()
     df = spark.createDataFrame(empty_data, schema)
 
     for i in groundwater_data_files:
